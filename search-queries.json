@@ -1,0 +1,17 @@
+{
+  "_comment": "Broad keyword searches across all of YouTube to escape the subscription bubble. Each is one search.list call (100 quota units). Keep this list short and high-signal. Add event-specific queries (e.g. 'Code with Claude', 'AI Engineer summit') when major conferences are happening.",
+  "queries": [
+    "Claude Opus",
+    "Claude Sonnet",
+    "GPT-5",
+    "Gemini 3",
+    "frontier model",
+    "coding agent",
+    "Claude Code",
+    "AI agent benchmark",
+    "SWE-bench",
+    "open weights model",
+    "Code with Claude",
+    "AI Engineer summit"
+  ]
+}

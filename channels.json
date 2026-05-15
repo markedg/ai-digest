@@ -1,0 +1,77 @@
+{
+  "_comment": "Channel IDs auto-resolved on first run via YouTube API. uploadsPlaylistId is the auto-generated playlist of all uploads (used for cheap fetches at 1 quota unit per page).",
+  "channels": [
+    {
+      "handle": "@AIDailyBrief",
+      "id": "UCKelCK4ZaO6HeEI1KQjqzWA",
+      "title": "The AI Daily Brief: Artificial Intelligence News",
+      "uploadsPlaylistId": "UUKelCK4ZaO6HeEI1KQjqzWA"
+    },
+    {
+      "handle": "@nateherk",
+      "id": "UC2ojq-nuP8ceeHqiroeKhBA",
+      "title": "Nate Herk | AI Automation",
+      "uploadsPlaylistId": "UU2ojq-nuP8ceeHqiroeKhBA"
+    },
+    {
+      "handle": "@AndrejKarpathy",
+      "id": "UCXUPKJO5MZQN11PqgIvyuvQ",
+      "title": "Andrej Karpathy",
+      "uploadsPlaylistId": "UUXUPKJO5MZQN11PqgIvyuvQ"
+    },
+    {
+      "handle": "@TwoMinutePapers",
+      "id": "UCbfYPyITQ-7l4upoX8nvctg",
+      "title": "Two Minute Papers",
+      "uploadsPlaylistId": "UUbfYPyITQ-7l4upoX8nvctg"
+    },
+    {
+      "handle": "@claude",
+      "id": "UCV03SRZXJEz-hchIAogeJOg",
+      "title": "Claude",
+      "uploadsPlaylistId": "UUV03SRZXJEz-hchIAogeJOg"
+    },
+    {
+      "handle": "@DwarkeshPatel",
+      "id": "UCXl4i9dYBrFOabk0xGmbkRA",
+      "title": "Dwarkesh Patel",
+      "uploadsPlaylistId": "UUXl4i9dYBrFOabk0xGmbkRA"
+    },
+    {
+      "handle": "@aiexplained-official",
+      "id": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+      "title": "AI Explained",
+      "uploadsPlaylistId": "UUNJ1Ymd5yFuUPtn21xtRbbw"
+    },
+    {
+      "handle": "@YannicKilcher",
+      "id": "UCZHmQk67mSJgfCCTn7xBfew",
+      "title": "Yannic Kilcher",
+      "uploadsPlaylistId": "UUZHmQk67mSJgfCCTn7xBfew"
+    },
+    {
+      "handle": "@indydevdan",
+      "id": "UC_x36zCEGilGpB1m-V4gmjg",
+      "title": "IndyDevDan",
+      "uploadsPlaylistId": "UU_x36zCEGilGpB1m-V4gmjg"
+    },
+    {
+      "handle": "@matthewberman",
+      "id": "UCzi5kcwU8aT4aLR7LcYhfWQ",
+      "title": "Matthew Berman",
+      "uploadsPlaylistId": "UUzi5kcwU8aT4aLR7LcYhfWQ"
+    },
+    {
+      "handle": "@OpenAI",
+      "id": "UCXZCJLdBC09xxGZ6gcdrc6A",
+      "title": "OpenAI",
+      "uploadsPlaylistId": "UUXZCJLdBC09xxGZ6gcdrc6A"
+    },
+    {
+      "handle": "@GoogleDeepMind",
+      "id": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+      "title": "Google DeepMind",
+      "uploadsPlaylistId": "UUP7jMXSY2xbc3KCAE0MHQ-A"
+    }
+  ]
+}

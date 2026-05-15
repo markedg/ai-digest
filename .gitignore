@@ -1,0 +1,6 @@
+.env
+node_modules/
+output/
+channel-cache.json
+view-history.db
+.DS_Store
