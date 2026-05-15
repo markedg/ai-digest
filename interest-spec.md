@@ -22,6 +22,7 @@ Any of these are fine, judged on substance not polish:
 - AI doom / existential-risk-vibes content that's more anxiety than substance
 - Intro-level explainers (what is an LLM, what is RAG) — the reader already knows this
 - Low-information-density reaction/hype videos even if popular — judge by signal density, not view count alone
+- Non-English videos — the reader only watches English-language content
 
 ## Official lab content
 

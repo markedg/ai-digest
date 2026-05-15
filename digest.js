@@ -112,6 +112,9 @@ async function videosDetails(videoIds) {
         likes: Number(v.statistics.likeCount || 0),
         liveBroadcastContent: v.snippet.liveBroadcastContent,
         isLive: !!v.liveStreamingDetails && v.snippet.liveBroadcastContent === 'live',
+        // YouTube uploaders often don't set these — null is common. Used for
+        // pre-LLM language filtering when reliably set.
+        defaultLanguage: v.snippet.defaultAudioLanguage || v.snippet.defaultLanguage || null,
       };
     }
   }
@@ -214,19 +217,27 @@ async function fetchCandidates() {
 
   const trustedChannelIds = new Set(channels.map((c) => c.id));
   const candidates = [];
+  let nonEnglishSkipped = 0;
   for (const [vid, seed] of seen) {
     const d = details[vid];
     if (!d) continue;
     if (d.isLive) continue;
     if (d.liveBroadcastContent === 'upcoming') continue;
     if (d.durationSeconds < MIN_DURATION_SECONDS) continue;
+    // Pre-LLM language filter: drop when YouTube reports a non-English audio/default
+    // language. Uploaders often leave this null, so this only catches the affirmative-
+    // non-English cases; the LLM filter step provides a backstop for unset ones.
+    if (d.defaultLanguage && !/^en(-|$)/i.test(d.defaultLanguage)) {
+      nonEnglishSkipped++;
+      continue;
+    }
     // Keyword-search videos must clear the view threshold;
     // trusted-channel uploads bypass it (we trust the source).
     const fromTrusted = trustedChannelIds.has(d.channelId);
     if (!fromTrusted && d.views < VIEW_THRESHOLD) continue;
     candidates.push({ ...d, sourceTag: seed.source, fromTrusted });
   }
-  console.log(`  ${candidates.length} candidates after filtering`);
+  console.log(`  ${candidates.length} candidates after filtering (${nonEnglishSkipped} non-English dropped)`);
 
   return candidates;
 }
@@ -305,6 +316,7 @@ ${spec}
 - Be strict. Hype, productivity-AI content, generic intro explainers, and clickbait should score low even with high views.
 - Substantive technical content from official labs is welcome; pure keynote/marketing is not.
 - Practical Claude Code / MCP / agent tooling content IS in scope even in tutorial form — the reader uses these daily.
+- **English only.** If the title or description suggests the video is not in English (e.g., Vietnamese, Korean, Spanish, Chinese, etc.), score it 0 / skip — even if the topic is on-spec.
 - Aim for roughly 5-10% "pick", 10-20% "bench", remainder "skip" — be selective.
 
 # Candidates (${batch.length} videos)
