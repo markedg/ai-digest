@@ -10,6 +10,7 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
 echo "=== Daily digest run started: $(date '+%Y-%m-%d %H:%M:%S %Z') ==="
 
+mkdir -p output
 node digest.js
 ./deploy.sh
 
